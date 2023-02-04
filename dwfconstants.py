@@ -32,6 +32,7 @@ devidDiscovery2  = c_int(3)
 devidDDiscovery  = c_int(4)
 devidADP3X50     = c_int(6)
 devidADP5250     = c_int(8)
+devidDPS3340     = c_int(9)
 
 # device version
 devverEExplorerC   = c_int(2)
@@ -112,7 +113,7 @@ triglenLess       = c_int(0)
 triglenTimeout    = c_int(1)
 triglenMore       = c_int(2)
 
-# error codes for the functions:                         
+# error codes for the functions:
 dwfercNoErc                  = c_int(0)		#  No error occurred
 dwfercUnknownError           = c_int(1)		#  API waiting on pending API timed out
 dwfercApiLockTimeout         = c_int(2)		#  API waiting on pending API timed out
@@ -135,6 +136,8 @@ funcNoise    = c_ubyte(6)
 funcPulse    = c_ubyte(7)
 funcTrapezium= c_ubyte(8)
 funcSinePower= c_ubyte(9)
+funcCustomPattern   = c_ubyte(28)
+funcPlayPattern     = c_ubyte(29)
 funcCustom   = c_ubyte(30)
 funcPlay     = c_ubyte(31)
 
@@ -174,14 +177,14 @@ DwfDigitalInClockSourceInternal = c_int(0)
 DwfDigitalInClockSourceExternal = c_int(1)
 
 DwfDigitalInSampleModeSimple   = c_int(0)
-# alternate samples: noise|sample|noise|sample|...  
+# alternate samples: noise|sample|noise|sample|...
 # where noise is more than 1 transition between 2 samples
 DwfDigitalInSampleModeNoise    = c_int(1)
 
 DwfDigitalOutOutputPushPull   = c_int(0)
 DwfDigitalOutOutputOpenDrain  = c_int(1)
 DwfDigitalOutOutputOpenSource = c_int(2)
-DwfDigitalOutOutputThreeState = c_int(3) 
+DwfDigitalOutOutputThreeState = c_int(3)
 
 DwfDigitalOutTypePulse      = c_int(0)
 DwfDigitalOutTypeCustom     = c_int(1)
@@ -226,6 +229,19 @@ DwfParamFrequency       = c_int(8) # Hz
 DwfParamExtFreq         = c_int(9) # Hz
 DwfParamClockMode       = c_int(10) # 0 internal, 1 output, 2 input, 3 IO
 
+DwfWindowRectangular    = c_int(0)
+DwfWindowTriangular     = c_int(1)
+DwfWindowHamming        = c_int(2)
+DwfWindowHann           = c_int(3)
+DwfWindowCosine         = c_int(4)
+DwfWindowBlackmanHarris = c_int(5)
+DwfWindowFlatTop        = c_int(6)
+DwfWindowKaiser         = c_int(7)
+
+DwfAnalogCouplingDC     = c_int(0)
+DwfAnalogCouplingAC     = c_int(1)
+
+
 # obsolate
 #STS
 stsRdy		= c_ubyte(0)
@@ -249,5 +265,4 @@ enumfilterEExplorer  = c_int(1)
 enumfilterDiscovery  = c_int(2)
 enumfilterDiscovery2 = c_int(3)
 enumfilterDDiscovery = c_int(4)
-
 
