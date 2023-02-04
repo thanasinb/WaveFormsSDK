@@ -47,23 +47,23 @@ try:
 
         """-----------------------------------"""
 
-        # compute the spectrum from 0Hz to 100KHz
-        start_frequency = 0
-        stop_frequency = 100e03
-        spectrum = tools.spectrum(buffer, tools.window.flat_top, scope.data.sampling_frequency, start_frequency, stop_frequency)
-
-        # calculate frequency domain data
-        frequency = []
-        length = len(spectrum)
-        step = (stop_frequency - start_frequency) / (length - 1)
-        for index in range(length):
-            frequency.append((start_frequency + index * step) / 1e06)   # convert frequency in MHz
-        
-        # plot
-        plt.plot(frequency, spectrum)
-        plt.xlabel("frequency [MHz]")
-        plt.ylabel("magnitude [dBV]")
-        plt.show()
+        # # compute the spectrum from 0Hz to 100KHz
+        # start_frequency = 0
+        # stop_frequency = 100e03
+        # spectrum = tools.spectrum(buffer, tools.window.flat_top, scope.data.sampling_frequency, start_frequency, stop_frequency)
+        #
+        # # calculate frequency domain data
+        # frequency = []
+        # length = len(spectrum)
+        # step = (stop_frequency - start_frequency) / (length - 1)
+        # for index in range(length):
+        #     frequency.append((start_frequency + index * step) / 1e06)   # convert frequency in MHz
+        #
+        # # plot
+        # plt.plot(frequency, spectrum)
+        # plt.xlabel("frequency [MHz]")
+        # plt.ylabel("magnitude [dBV]")
+        # plt.show()
 
         """-----------------------------------"""
 
